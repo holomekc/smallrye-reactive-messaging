@@ -88,6 +88,8 @@
 
     <jboss-log-manager.version>2.1.19.Final</jboss-log-manager.version>
 
+    <aws.sdk.version>2.20.66</aws.sdk.version>
+
     <kafka.version>3.5.0</kafka.version>
 
     <opentelemetry.version>1.25.0-alpha</opentelemetry.version>
@@ -123,6 +125,9 @@
 
   <modules>
     <module>api</module>
+    <module>smallrye-reactive-messaging-aws</module>
+    <module>smallrye-reactive-messaging-aws-sqs</module>
+    <module>smallrye-reactive-messaging-aws-sns</module>
     <module>smallrye-reactive-messaging-provider</module>
     <module>smallrye-reactive-messaging-in-memory</module>
     <module>smallrye-reactive-messaging-otel</module>
@@ -275,6 +280,15 @@
         <groupId>io.opentelemetry.instrumentation</groupId>
         <artifactId>opentelemetry-instrumentation-bom-alpha</artifactId>
         <version>${opentelemetry.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <!-- AWS SDK for STS, SQS, etc. -->
+      <dependency>
+        <groupId>software.amazon.awssdk</groupId>
+        <artifactId>bom</artifactId>
+        <version>${aws.sdk.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
