@@ -92,7 +92,6 @@ public class SqsConnector implements InboundConnector, OutboundConnector, Health
     @PostConstruct
     void init() {
         this.vertx = executionHolder.vertx();
-        // test
         this.jsonMapping = jsonMappers.isUnsatisfied() ? new VertxJsonMapping() : jsonMappers.get();
     }
 
